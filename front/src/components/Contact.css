@@ -1,0 +1,104 @@
+.form-contact {
+    display: flex;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background-color: #fffad8;
+}
+
+form input {
+    border-style: hidden;
+    background-color: #fffdec;
+    border-radius: 20px;
+    border-bottom-style: groove;
+    border-bottom-color: #36e6a4;
+    width: 85%;
+    padding: 10px;
+    margin: 20px auto 10px auto;
+    font-size: 13px;
+    color: #114a35;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::placeholder {
+    color: #114a35;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-contact button:not(:first-child) {
+    width: 35%;
+    border-radius: 20px;
+    height: 40px;
+    background-color: #36e6a4;
+    border-style: none;
+    border-bottom-style: groove;
+    border-bottom-color: #fffad8;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 15px;
+    color: #fffad8;
+    margin-top: 40px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-contact button:first-child {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-btn img {
+    width: 15px;
+    margin: 10px;
+}
+
+form textarea {
+    border-style: hidden;
+    background-color: #fffdec;
+    border-radius: 32px;
+    border-bottom-style: groove;
+    border-bottom-color: #36e6a4;
+    width: 85%;
+    padding: 10px;
+    margin: 20px auto 40px auto;
+    height: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-edit button:not(:first-child) {
+    width: 31%;
+    border-radius: 20px;
+    height: 35px;
+    background-color: #36e6a4;
+    border-style: none;
+    border-bottom-style: groove;
+    border-bottom-color: #fffad8;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #fffad8;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-edit button:first-child {
+    border: none;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-edit button:last-child {
+    background-color: red;
+    
+}
+

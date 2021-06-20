@@ -4,12 +4,12 @@ import api from "../api/contact";
 import './App.css';
 import AddContact from './AddContact';
 import ContactList from './ContactList';
-import SearchBar from './SearchBar';
 
 function App() {
-  // const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
   const [clicked, setClicked] = useState(false);
+  const [search, setSearchTerm] = useState("");
+  const [searchResult, setResult] = useState([]);
 
   const renderForm = useCallback(() => {
     setClicked({
@@ -33,23 +33,26 @@ function App() {
     setContacts([...contacts, res.data]);
   }
 
-  // const removeContact = (id) => {
-  //   const newContactList = contacts.filter((contact) => {
-  //     return contact.id !== id;
-  //   });
-
-  //   setContacts(newContactList);
-  // };
+  const searchHandler = (searchTerm) => {
+    setSearchTerm(searchTerm);
+    if(searchTerm !== "") {
+      const newList = contacts.filter((contact) => {
+        return Object.values(contact)
+        .join(" ")
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase())
+      });
+      setResult(newList); 
+    } else {
+      setResult(contacts);
+    }
+  }
 
   useEffect(() => {
-    // const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    // if (retriveContacts) setContacts(retriveContacts);
     const getAllContacts = async () => {
       const allContacts = await getContacts();
-      console.log('all', allContacts);
       if(allContacts) setContacts(allContacts);
     }
-
     getAllContacts();
   }, []);
 
@@ -59,13 +62,17 @@ function App() {
   return (
     <div>
       <div className='header'>
-        <SearchBar />
         <button onClick={renderForm}>
-          New Contact
+          Nouveau Contact
         </button>
       </div>
       { clicked && <AddContact contactHandler={contactHandler}/> }
-      <ContactList contacts={contacts}/>
+      <ContactList 
+        contacts={search.length < 1 ? contacts : searchResult} 
+        term={search} 
+        searchKey={searchHandler}
+        placeholder="Rechercher un contact..."
+      />
     </div>
   );
 }
