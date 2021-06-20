@@ -1,9 +1,67 @@
-#root {
-  font-family: 'Helvetica Nue' !important;
+body {
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .header {
+  width: 145px;
+  position: fixed;
+  right: 595px;
+  top: 50px;
+}
+
+.header button {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background-color: #36e6a4;
+  color: #fcfaeb;
+  border-style: none;
+  border-bottom-style: groove;
+  border-bottom-color: #fffad8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.contactList {
+  width: 75%;
+  margin-left: auto;
+  margin-top: 50px;
+}
+
+.searchBar {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  width: 210px;
+  border-color: #36e6a4;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #e6f7ff;
+  border-radius: 36px;
+  padding: 15px;
+  font-size: 12px;
+  margin: 15px 0 15px 0;
+  width: 450px;
+}
+
+.contactInfo {
   display: flex;
-  justify-content: space-around;
-  margin-top: 5%;
+}
+
+.contactInfo p {
+  margin: 0 10px 5px 0;
+}
+
+.contactInfo :nth-child(2) {
+  font-weight: bold;
+  color: #114a35;
+}
+
+.no-contact {
+  font-size: 13px;
+  color: #114a35;
+  margin-left: 180px;
+  margin-top: 40px;
 }
